@@ -108,5 +108,13 @@ namespace CashRegister.Test.Unit
 
             Assert.That(uut.GetTotal(), Is.EqualTo(0));
         }
+
+        [Test]
+        public void Substract_OneMoreNegativeItem_ToGetNegativeNumber()
+        {
+            uut.AddItem(0);
+            uut.SubtractItem(-5);
+            Assert.That(uut.GetTotal(),Is.EqualTo(-5));
+        }
     }
 }
